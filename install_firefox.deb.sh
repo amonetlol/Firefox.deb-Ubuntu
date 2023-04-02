@@ -4,10 +4,10 @@
 sudo snap remove --purge firefox
 
 # Remove o pacote fake que redireciona para o snap
-sudo apt remove firefox
+sudo apt remove firefox -y
 
 # Adiciona o repositorio PPA do Mozilla Team
-sudo add-apt-repository ppa:mozillateam/ppa
+sudo add-apt-repository ppa:mozillateam/ppa -y
 
 # Adiciona configuracoes para priorizar a instalacao via PPA
 sudo tee /etc/apt/preferences.d/mozillateamppa <<EOF
@@ -26,5 +26,5 @@ EOF
 echo 'Unattended-Upgrade::Allowed-Origins:: "LP-PPA-mozillateam:${distro_codename}";' | sudo tee /etc/apt/apt.conf.d/51unattended-upgrades-firefox
 
 # Atualiza repositorios e instala o Firefox
-sudo apt update && sudo apt install firefox
+sudo apt update && sudo apt install firefox -y
 
